@@ -6,4 +6,6 @@ It is designed as a Apache Spark application to run queries efficiently on a 11G
 + Q3: Finding the top k locations that have the highest numbersof checkout records
 
 The application was tested on different data volumes, meaning different ranges of year records, e.g. only processing records from 2005 or all records from 2005-2017.
-A AWS cluster instance of m5.xlarge with a total size of 64GB, comprising 1 master and 3 core nodes was used to assess the performance for the entire application and each query separately. 
+An AWS cluster instance of m5.xlarge with a total size of 64GB, comprising 1 master and 3 core nodes was used to assess the performance for the entire application and each query separately. 
+Increasing the data volume significantly effects the run time, however it doesn’t increase linearly. A 27x larger data set results in a roughly 3x longer run time. 
+The use of persist() allowed to cache DataFrames in memory which slightly improved the run time when running the entire application on the largest tested data set. 
