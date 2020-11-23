@@ -11,5 +11,5 @@ Increasing the data volume significantly effects the run time, however it doesnâ
 The use of persist() allowed to cache DataFrames in memory which slightly improved the run time when running the entire application on the largest tested data set. 
 
 To run the application modify src/main/application.conf to link the data sources and set the number of k locations. 
-By default all queries are executed, however you can specify which query to run by passing the argument according to the query number, e.g. to run only the first query > run.sh 1. 
+By default all queries are executed, however you can specify which query to run by passing the argument according to the query number, e.g. to run only the first query > sbt run.sh 1. 
 The query output is saved as csv files in out/q1, out/q2 and out/q3 repectively. 
